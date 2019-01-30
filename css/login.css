@@ -1,0 +1,99 @@
+h1
+{
+    font-family: "Lucida Handwriting";
+    font-style: italic;
+    color:rgb(0, 255, 64);
+    text-align: center;
+    font-size: 5vmin;
+    padding-top: 3vmin;
+}
+
+body
+{
+    background-color: black;
+    background-image: url(https://cdn141.picsart.com/260339120017212.png?r1024x1024);
+    background-size: 100%;
+}
+
+.box23
+{
+    height: 60vmin;
+    width: 100%;
+    /* background-color: aqua;*/
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.box2
+{
+    width: 50%;
+    height: 35vmin;
+    position: relative;
+    display: inline-block;
+    border: solid rgb(0, 255, 255);
+    /* background-color: black;*/
+    border-radius: 5vmin;
+    text-align: center;
+}
+
+.box3
+{
+    width: 50%;
+    height: 50vmin;
+    position: relative;
+    display: inline-block;
+    /* background-color: black;*/
+    border: solid blue;
+    border-radius: 5vmin;
+    text-align: center;
+
+}
+
+h2
+{
+    font-family: cursive;
+    font-size: 3vmin;
+    color: magenta;
+}
+
+h3
+{
+    font-family: "Lucida Handwriting";
+    font-style: italic;
+    font-size: 2vmin;
+    color: aqua;
+}
+
+h4
+{
+    font-family: "Lucida Handwriting";
+    font-style: italic;
+    font-size: 2vmin;
+    color: blue;
+}
+
+.input
+{
+    border: solid magenta;
+    border-radius: 5vmin;
+    height: 3vmin;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.submit
+{
+    height: 3vmin;
+    border: solid aqua;
+    border-radius: 2vmin;
+    background-color: rgb(0, 255, 255);
+    text-align: center;
+    width: 10vmin;
+}
+
+.gaps
+{
+    margin: 3vmin;
+}
