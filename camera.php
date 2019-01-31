@@ -17,7 +17,7 @@ include 'head.php';
         <a href="camera.php"><input class="camerabutton" type="button" value="camera"></a>
         <input class="profilebutton" type="button" onclick="alert('Go to profile')" value="profile">
         <input class="gallerybutton" type="button" onclick="alert('Go to gallery')" value="gallery">
-        <!-- <input class="logoutbutton" type="button" onclick="alert('logout')" value="logout"> -->
+        <a href="settings.phtml"><input type="submit" value="settings"></a>
         <a href="logout.php"><input class="logoutbutton" type="button" value="logout"></a>
       </div>
 

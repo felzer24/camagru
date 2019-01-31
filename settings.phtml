@@ -1,0 +1,85 @@
+<?php
+// php update data in mysql database using PDO
+session_start();
+$host = "localhost";
+$username = "root";
+$password = "123456";
+$database = "camagru";
+$message = "";
+
+
+if(isset($_POST['submit']))
+{
+    try{
+        $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
+        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $exc) {
+        echo $exc->getMessage();
+        exit();
+    }
+
+    
+//     // get values from input text form and number
+    
+    $username = $_POST['usernamenew'];
+    $password = $_POST['passwordnew'];
+    $email = $_SESSION['email'];
+    
+//     // mysql query to Update data
+if (isset($_SESSION['email']))
+{ 
+    $update = $connect->prepare("UPDATE users SET username='$username', password='$password' WHERE email='$email'");
+    $update->execute();
+    echo "done";
+}
+
+    // $query = "SELECT username, password FROM users WHERE email='$email'";
+    // $select = $connect->prepare($query);
+    // $select->setFetchMode(PDO::FETCH_ASSOC);
+    // $select->execute();
+    // $pdoExec = $select->fetch();
+    // print_r($pdoExec);
+
+}
+//     // (array(":username"=>$username,":password"=>hash('whirlpool', $password),":id"=>$id));
+
+//     if ($pdoExec['id']==$id)
+//     {
+//         $update = $con->prepare("UPDATE users SET username='$username' and password='$password'");
+//         $update->execute();
+//     }
+
+
+
+//     // $insert = "UPDATE users SET username='$username' WHERE id='$id'";
+//     // $query = $con->prepare($insert);
+//     // $query->execute;
+//     // echo $query->rowCount() . "records UPDATED successfully";
+    
+//     if($pdoExec)
+//     {
+//         echo "Successfully Updated!!!,you will be redirected in 3 seconds"; 
+//         header('Refresh: 3; URL=http://localhost:8080/camagru/login.phtml');
+//     }else{
+//         echo 'ERROR Data Not Updated';
+//     }
+
+// } 
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UPDATE LOGIN DETAILS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="settings.phtml" method="post">
+            <input type="text" name="usernamenew" required placeholder="username"><br><br>
+            <input type="password" name="passwordnew" required placeholder="password"><br><br>
+            <input type="submit" name="submit" required placeholder="submit">
+        </form>
+    </body>
+</html>
