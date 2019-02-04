@@ -1,31 +1,62 @@
 <?php
-{
+    // php update data in mysql database using PDO
+    session_start();
+    $host = "localhost";
+    $username = "root";
+    $password = "123456";
+    $database = "camagru";
+    $message = "";
     
-    $newPassword = Request["newPassword"];
-    $confirmPassword = Request["confirmPassword"];
-    $token = Request["token"];
-    if (IsPost)
+    
+    if(isset($_POST['submit']))
     {
-        // input testing is ommitted here to save space
-        $returnValue = ResetPassword($token, $newPassword); 
+        try{
+            $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } 
+        catch (PDOException $exc) {
+            echo $exc->getMessage();
+            exit();
+        }
+    
+        $password = rand(1000, 9999);
+        $email = $_POST['email'];
+        
+
+    $query = "UPDATE `users` SET `password`=:password WHERE `email` = :email";
+    
+    $pdoResult = $connect->prepare($query);
+    
+    $pdoExec = $pdoResult->execute(array(":password"=>hash('whirlpool', $password),":email"=>$email));
+
+    if($pdoResult)
+    {
+        $str = "your temporary password is -->" .$password;
+
+        mail($email, "CAMAGRU temporary password", $str);
+        echo "Check your email for temporary password,you will be redirected in 3 seconds"; 
+        header('Refresh: 3; URL=http://localhost:8080/camagru/login.phtml');
     }
+    else
+    {
+        echo 'ERROR Data Not Updated';
+    }
+    //header('Refresh: 2; URL=http://localhost:8080/camagru/index.php');
 }
 ?>
-    <h1>Change Password</h1>
-    
-    <form method="post" action="">
-    
-    <label for="newPassword">New Password:</label> 
-    <input type="password" id="newPassword" name="newPassword" title="New password" />
-    
-    <label for="confirmPassword">Confirm Password:</label> 
-    <input type="password" id="confirmPassword" name="confirmPassword" title="Confirm new password" />
-    
-    <label for="token">Pasword Token:</label> 
-    <input type="text" id="token" name="token" title="Password Token" />
-    
-    <p class="form-actions">
-    <input type="submit" value="Change Password" title="Change password" />
-    </p>
-    
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UPDATE LOGIN DETAILS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <form action="forgotpass.phtml" method="post">
+    <input class="input" placeholder="Enter email" type="email" name="email" required>
+    <input type="submit" name="submit" placeholder="Send mail">
     </form>
+    </body>
+</html>

@@ -22,9 +22,14 @@ if(isset($_POST['submit']))
 //     // get values from input text form and number
     
     $username = $_POST['usernamenew'];
-    // $password = $_POST['passwordnew'];
     $password = hash('whirlpool',$_POST['passwordnew']);
     $email = $_SESSION['email'];
+
+    // if (strlen($pass) < 6 || strlen($pass) > 12 || !preg_match("#[A-Z]+#", $pass))
+    //     {
+    //         echo ("password must be 6-12 characters and contain atleast 1 capital letter");
+    //         header('Refresh: 2; URL=http://localhost:8080/camagru/settings.phtml');
+    //     }
     
 //     // mysql query to Update data
 if (isset($_SESSION['email']))
@@ -32,42 +37,11 @@ if (isset($_SESSION['email']))
     $update = $connect->prepare("UPDATE users SET username='$username', password='$password' WHERE email='$email'");
     $update->execute();
     echo "Your changes have been made. You will be redirected";
+    header('Refresh: 2; URL=http://localhost:8080/camagru/login.phtml');
 }
 
-header('Refresh: 2; URL=http://localhost:8080/camagru/index.php');
-
-    // $query = "SELECT username, password FROM users WHERE email='$email'";
-    // $select = $connect->prepare($query);
-    // $select->setFetchMode(PDO::FETCH_ASSOC);
-    // $select->execute();
-    // $pdoExec = $select->fetch();
-    // print_r($pdoExec);
-
 }
-//     // (array(":username"=>$username,":password"=>hash('whirlpool', $password),":id"=>$id));
 
-//     if ($pdoExec['id']==$id)
-//     {
-//         $update = $con->prepare("UPDATE users SET username='$username' and password='$password'");
-//         $update->execute();
-//     }
-
-
-
-//     // $insert = "UPDATE users SET username='$username' WHERE id='$id'";
-//     // $query = $con->prepare($insert);
-//     // $query->execute;
-//     // echo $query->rowCount() . "records UPDATED successfully";
-    
-//     if($pdoExec)
-//     {
-//         echo "Successfully Updated!!!,you will be redirected in 3 seconds"; 
-//         header('Refresh: 3; URL=http://localhost:8080/camagru/login.phtml');
-//     }else{
-//         echo 'ERROR Data Not Updated';
-//     }
-
-// } 
 
 ?>
 
