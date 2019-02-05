@@ -4,14 +4,6 @@ include 'head.php';
   <body>
     <h1>CAMAGRU</h1>
 
-            <?php if(!isset($_SESSION['email'])): ?>
-            <P style="font-size: 14px" color="white">You are currently not signed in <a href="login.php">Log in</a> Not yet a member?" <a href="signup.php">Sign up</a> </P>
-            <?php else: ?>  
-            <p style="font-size: 14px">You are logged in as <?php if(isset($_SESSION['email'])) echo $_SESSION['email']; ?> <a href="logout.php">Logout</a> </p>
-            <?php endif ?>
-
-
-
     <div class="all-bx">
       <div id="sidebar">
         <a href="camera.php"><input class="camerabutton" type="button" value="camera"></a>

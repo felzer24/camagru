@@ -12,7 +12,7 @@
 <body>
     <h1>CAMAGRU</h1>
         <div class="box2">
-            <a href="camera.php"><input class="camerabutton" type="button" value="camera"></a>
+            <a href="images.php"><input class="camerabutton" type="button" value="camera"></a>
             <input class="profilebutton" type="button" onclick="alert('Go to profile')" value="profile">
             <input class="gallerybutton" type="button" onclick="alert('Go to gallery')" value="gallery">
             <a href="settings.phtml"><input type="submit" value="settings"></a>
