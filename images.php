@@ -1,54 +1,55 @@
 
+<?php
+session_start();
+$host = "localhost";
+$username = "root";
+$password = "123456";
+$database = "camagru";
+$message = "";
 
-<!-- // session_start();
-// $host = "localhost";
-// $username = "root";
-// $password = "123456";
-// $database = "camagru";
-// $message = "";
+try
+{
+    $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
+    $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $exc)
+{
+    echo $exc->getMessage();
+    exit();
+}
 
-// try
-// {
-//     $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
-//     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// }
-// catch (PDOException $exc)
-// {
-//     echo $exc->getMessage();
-//     exit();
-// }
+if (isset($_POST['submit']))
+{
+    if (getimagesize($_FILES['image']['temp_name']) == FALSE)
+    {
+        echo "Please select ana image";
+    }
+    else
+    {
+        $image = addslashes($_FILES['image']['temp_name']);
+        $name = addslashes($_FILES['images']['temp_name']);
+        $image = file_get_contents($image);
+        $image = base64_encode($image);
+        saveimage($name, $image);
+    }
 
-// if (isset($_POST['submit']))
-// {
-//     if (getimagesize($_FILES['image']['temp_name']) == FALSE)
-//     {
-//         echo "Please select ana image";
-//     }
-//     else
-//     {
-//         $image = addslashes($_FILES['image']['temp_name']);
-//         $name = addslashes($_FILES['images']['temp_name']);
-//         $image = file_get_contents($image);
-//         $image = base64_encode($image);
-//         saveimage($name, $image);
-//     }
+    function saveimage($name, $image)
+    {
+       $query = "INSERT INTO images (name, image) vales ('$name', '$image')";
+       $result = $connect->prepare($query);
+       $result->execute();
+       if ($result)
+       {
+           echo "Image uploaded";
+       }
+       else
+       {
+           echo "Image not uploaded";
+       }
 
-    // function saveimage($name, $image)
-    // {
-    //    $query = "INSERT INTO images (name, image) vales ('$name', '$image')";
-    //    $result = $connect->prepare($query);
-    //    $result->execute();
-    //    if ($result)
-    //    {
-    //        echo "Image uploaded";
-    //    }
-    //    else
-    //    {
-    //        echo "Image not uploaded";
-    //    }
-
-    // }
-//} -->
+    }
+}
+?>
 
 
 <!DOCTYPE html>
