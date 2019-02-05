@@ -80,7 +80,9 @@ navigator.mediaDevices.getUserMedia({video: true, audio: false})
       context.drawImage(video, 0, 0, width, height);
 
       // Create image from the canvas
-      const imgUrl = canvas.toDataURL('image/png');
+      var imgDataUrl = canvas.toDataURL('image/png');
+
+      document.querySelector('#savebutton').href = imgDataUrl;
 
       // Create img element
       const img = document.createElement('img');
