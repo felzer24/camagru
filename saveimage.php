@@ -104,7 +104,7 @@
 </html> -->
 
 
-<!-- <html>
+<html>
 <head>
     <title>UPDATE LOGIN DETAILS</title>
     <meta charset="UTF-8">
@@ -113,7 +113,9 @@
 <body>
 <form action="images.php" method="post"></form>
 <label>user name</label>
-<input placeholder="Enter username" type="text" name="user_name" required>
+<input placeholder="Enter username" type="text" name="user_name" required="">
 <label>Profile picture</label>
+<input type="file" name="profile" required="" accept="*/image">
+<button type="submit" name="btn-add">Add new</button>
 </body>
-</html> -->
+</html>

@@ -32,7 +32,10 @@ include 'head.php';
             <button id="clear-button" class="btn btn-light">Clear</button>
             <canvas id="canvas"></canvas>
 
-            <a id="savebutton" href="imageDataUrl" download="camagru_selfie.png">Save Photo</a>
+            <a id="savebutton" href="imageDataUrl" download="camagru.png">Save Photo</a>
+            <form action="" method="post">
+            <input type="file" name="upload">
+            </form>
             <!-- <a href="saveimage.php"><input type="submit value="upload>Upload</a> -->
             <!-- <form action="saveimage.php" method="post"> -->
             <!-- <input id="camera" name="image"> -->
