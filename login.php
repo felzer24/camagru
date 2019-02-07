@@ -24,7 +24,7 @@ try{
         }
         else{
            $_SESSION['email']=$data['email'];
-           $_SESSION['name']=$data['name'];
+           $_SESSION['username']=$data['username'];
            header("location: index.php"); 
         }
     }

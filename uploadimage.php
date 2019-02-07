@@ -47,19 +47,18 @@ if(isset($_POST['btn-add']))
         $stmt->bindParam(':utxt', $image_text);
         if($stmt->execute())
         {
-          
             ?>
-            <script>
-                alert("new record successul");
-                window.location.href=('index.php');
-            </script>
-        <?php
+                <script>
+                alert("IMAGE WAS SUCCESSFULLY UPLOADED");
+                window.location.href=('camera.php');
+                 </script>
+                 <?php
         }
         else{
             ?>
             <script>
                 alert("Error");
-               window.location.href=('index.php');
+               window.location.href=('camera.php');
             </script>
             <?php
         }
@@ -72,17 +71,19 @@ if(isset($_POST['btn-add']))
 <!DOCTYPE html>
 <html>
     <head>
-        <title>UPDATE LOGIN DETAILS</title>
+        <title>UPLOAD IMAGES</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
     <body>
 <div id="content">
   <form method="POST" action="uploadimage.php" enctype="multipart/form-data">
     <input type="hidden" name="size" value="1000000">
     <div>
-      <input class="input" placeholder="Enter username" type="text" name="username" required><br>
-      <input type="file" name="profile" required="" accept="*/image">
+    <h3>Upload an image?</h3>
+      <input class="input" placeholder="Enter username" type="text" name="username" required><br><br>
+      <input type="file" name="profile" required="" accept="*/image"><br><br>
     </div>
     <div>
       <textarea 
@@ -90,10 +91,11 @@ if(isset($_POST['btn-add']))
         cols="40" 
         rows="4" 
         name="image_text" 
+        class="input"
         placeholder="Say something about this image..."></textarea>
     </div>
     <div>
-        <button type="submit" name="btn-add">Add new</button>
+        <button class="submit" type="submit" name="btn-add">Add new</button>
     </div>
   </form>
 </div>

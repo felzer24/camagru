@@ -1,4 +1,5 @@
 <?php
+include 'head.php';
     // php update data in mysql database using PDO
     session_start();
     $host = "localhost";
@@ -52,9 +53,12 @@
         <title>UPDATE LOGIN DETAILS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
     <body>
     <form action="forgotpass.phtml" method="post">
+    <h3>Please check your email for a 4-digit temparary password. Sign in as usual using the 4-digit pin
+    & then change your password once you are logged in</h3>
     <input class="input" placeholder="Enter email" type="email" name="email" required>
     <input type="submit" name="submit" placeholder="Send mail">
     </form>

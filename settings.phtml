@@ -1,4 +1,6 @@
 <?php
+include 'head.php';
+
 // php update data in mysql database using PDO
 session_start();
 $host = "localhost";
@@ -51,12 +53,15 @@ if (isset($_SESSION['email']))
         <title>UPDATE LOGIN DETAILS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
     <body>
         <form action="settings.phtml" method="post">
-            <input type="text" name="usernamenew" required placeholder="username"><br><br>
-            <input type="password" name="passwordnew" required placeholder="password"><br><br>
-            <input type="submit" name="submit" required placeholder="submit">
+        <h3>Enter new username :</h3>
+            <input class="input" type="text" name="usernamenew" required placeholder="username"><br><br>
+            <h4>Enter new password :</h4>
+            <input class="input" type="password" name="passwordnew" required placeholder="password"><br><br>
+            <input class="submit" type="submit" name="submit" required placeholder="submit">
         </form>
     </body>
 </html>

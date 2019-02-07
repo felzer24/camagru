@@ -1,6 +1,26 @@
 <?php
 include 'head.php';
+session_start();
+$host = "localhost";
+$username = "root";
+$password = "123456";
+$database = "camagru";
+$message = "";
+
+
+try
+{
+    $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
+    $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $error)
+{
+      $message = $error->getMessage();
+}
 ?>
+<head>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
   <body>
     <h1>CAMAGRU</h1>
 
@@ -8,7 +28,7 @@ include 'head.php';
       <div id="sidebar">
         <a href="camera.php"><input class="camerabutton" type="button" value="camera"></a>
         <input class="profilebutton" type="button" onclick="alert('Go to profile')" value="profile">
-        <input class="gallerybutton" type="button" onclick="alert('Go to gallery')" value="gallery">
+        <a href="gallery.php"><input class="gallerybutton" type="button" value="gallery"></a>
         <a href="settings.phtml"><input type="submit" value="settings"></a>
         <a href="logout.php"><input class="logoutbutton" type="button" value="logout"></a>
       </div>
@@ -16,7 +36,7 @@ include 'head.php';
       <div id="img-bx">
         <video id="video">Stream not available...</video>
         
-              <button id="photo-button" class="btn btn-dark">
+              <button class="submit" id="photo-button" class="btn btn-dark">
                 Take Photo
               </button>
             <select id="photo-filter" class="select">
@@ -29,13 +49,10 @@ include 'head.php';
               <option value="contrast(200%)">Contrast</option>
             </select>
             <!-- <button id="save-button" name="save-button">Save</button> -->
-            <button id="clear-button" class="btn btn-light">Clear</button>
+            <button class="submit" id="clear-button" class="btn btn-light">Clear</button>
             <canvas id="canvas"></canvas>
 
-            <a id="savebutton" href="imageDataUrl" download="camagru.png">Save Photo</a>
-            <form action="" method="post">
-            <input type="file" name="upload">
-            </form>
+            <a class="submit" id="savebutton" href="imageDataUrl" download="camagru.png">Save Photo</a>
             <!-- <a href="saveimage.php"><input type="submit value="upload>Upload</a> -->
             <!-- <form action="saveimage.php" method="post"> -->
             <!-- <input id="camera" name="image"> -->
@@ -48,4 +65,7 @@ include 'head.php';
 <div id="photos"></div>
 
 <script src="camera.js"></script>
+<?php
+include 'uploadimage.php';
+?>
 </body>
