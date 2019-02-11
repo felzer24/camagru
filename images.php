@@ -65,7 +65,7 @@ if (isset($_POST['submit']))
 <body>
 <form action="images.php" method="post">
 <br>
-<input tyoe="file" name="image">
+<input type="file" name="image">
 <br><br>
 <input type="submit" name="submit" value="submit">
 </form>

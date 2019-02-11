@@ -24,6 +24,7 @@ if(isset($_POST['submit']))
 //     // get values from input text form and number
     
     $username = $_POST['usernamenew'];
+    $emailnew = $_POST['emailnew'];
     $password = hash('whirlpool',$_POST['passwordnew']);
     $email = $_SESSION['email'];
 
@@ -36,7 +37,7 @@ if(isset($_POST['submit']))
 //     // mysql query to Update data
 if (isset($_SESSION['email']))
 { 
-    $update = $connect->prepare("UPDATE users SET username='$username', password='$password' WHERE email='$email'");
+    $update = $connect->prepare("UPDATE users SET username='$username', password='$password', email='$emailnew' WHERE email='$email'");
     $update->execute();
     echo "Your changes have been made. You will be redirected";
     header('Refresh: 2; URL=http://localhost:8080/camagru/login.phtml');
@@ -61,7 +62,9 @@ if (isset($_SESSION['email']))
             <input class="input" type="text" name="usernamenew" required placeholder="username"><br><br>
             <h4>Enter new password :</h4>
             <input class="input" type="password" name="passwordnew" required placeholder="password"><br><br>
-            <input class="submit" type="submit" name="submit" required placeholder="submit">
+        <h3>Enter new email :</h3>
+        <input class="input" type="text" name="emailnew" required placeholder="email"><br><br>
+        <input class="submit" type="submit" name="submit" required placeholder="submit">
         </form>
     </body>
 </html>

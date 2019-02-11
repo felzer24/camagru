@@ -8,6 +8,11 @@ h1
         padding-top: 3vmin; 
     }
 
+    h5
+    {
+        color: white;
+    }
+
     body
     {
         background-color: black;
