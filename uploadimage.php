@@ -17,15 +17,11 @@ $message = "";
     }
 if(isset($_POST['btn-add']))
     {
-       
+        $email = $_SESSION['email'];
         $name = $_POST['username'];
-        
         $images = $_FILES['profile']['name']; //gets image name
-        
         $image_text = $_POST['image_text'];  //gets text from user input
-
         $tmp_dir = $_FILES['profile']['tmp_name'];
-        
         $imageSize = $_FILES['profile']['size'];
        
         $upload_dir = 'uploads/'; //img file directory
@@ -52,7 +48,9 @@ if(isset($_POST['btn-add']))
                 alert("IMAGE WAS SUCCESSFULLY UPLOADED");
                 window.location.href=('camera.php');
                  </script>
-                 <?php
+            <?php
+                $str = "You have recently uploaded an image. Other users will be able to view this image. ";
+                mail($email, "Recent Image", $str);
         }
         else{
             ?>
