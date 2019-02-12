@@ -4,6 +4,9 @@ let width = 500,
     filter = 'none',
     streaming = false;
 
+    //for stickers
+var stick = document.getElementById('stick');
+
 // DOM Elements
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
@@ -78,6 +81,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: false})
       canvas.height = height;
       // Draw an image of the video on the canvas
       context.drawImage(video, 0, 0, width, height);
+      context.drawImage(stick, 0, 0, width, height);
 
       // Create image from the canvas
       var imgDataUrl = canvas.toDataURL('image/png');
@@ -94,6 +98,16 @@ navigator.mediaDevices.getUserMedia({video: true, audio: false})
       img.style.filter = filter;
 
       // Add image to photos
-      photos.appendChild(img);
+      // photos.appendChild(img);
     }
   }
+
+  var stickers = document.getElementsByClassName('sticker');
+  
+  stickers = Array.from(stickers);
+
+stickers.forEach( function(sticker, i ){
+    sticker.addEventListener( 'click', function(){
+      stick.src = sticker.src;
+    });
+});
