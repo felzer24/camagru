@@ -54,7 +54,7 @@ catch(PDOException $error)
             <br>
             <div class="icon-bar">
             <img src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwijvrjSj7bgAhWI1-AKHcINCrYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.seekpng.com%2Fipng%2Fu2e6i1a9y3w7t4w7_heart-emoji-smoke-cool-emojis-pink-nice-sticker%2F&psig=AOvVaw3sCubGq_RLtBYoPB4NNhnl&ust=1550058394342588" alt="">
-            </div>
+             </div>
             <br><br><br><br>
             <canvas id="canvas"></canvas>
 
