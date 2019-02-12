@@ -8,7 +8,7 @@ $username = "root";
 $password = "123456";
 $database = "camagru";
 $message = "";
-
+echo"SESSION";var_dump($_SESSION);
 
 if(isset($_POST['submit']))
 {
@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
 
     
 //     // get values from input text form and number
-    
+   
     $username = $_POST['usernamenew'];
     $emailnew = $_POST['emailnew'];
     $password = hash('whirlpool',$_POST['passwordnew']);
