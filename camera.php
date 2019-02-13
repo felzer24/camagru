@@ -50,14 +50,14 @@ catch(PDOException $error)
               <option value="contrast(200%)">Contrast</option>
             </select>
             <!-- <button id="save-button" name="save-button">Save</button> -->
-            <button class="submit" id="clear-button" class="btn btn-light">Clear</button>
+            <!-- <button class="submit" id="clear-button" class="btn btn-light">Clear</button> -->
             <br>
             <div class="icon-bar">
-            <img class="sticker" src="https://www.seekpng.com/png/small/309-3099727_revolving-hearts-heart-emoji-sticker-png.png" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="https://cdn131.picsart.com/276545973018211.png?r1024x1024" style="width:42px;height:42px;border:0">
             <img class="sticker" src="http://www.stickpng.com/assets/images/584998d695008575ff974862.png" style="width:42px;height:42px;border:0">
             <img class="sticker" src="http://pngimg.com/uploads/glasses/glasses_PNG54293.png" style="width:42px;height:42px;border:0;">
-            <img class="sticker" src="https://www.clipartmax.com/png/middle/161-1610445_tongue-mouth-sticker-art-interesting-lips-edit-freetoed-tongue.png" style="width:42px;height:42px;border:0">
-            <img class="sticker" src="https://banner2.kisspng.com/20180126/sfe/kisspng-dog-puppy-snapchat-cat-we-heart-it-dog-ear-dog-nose-sticker-5a6b9c700aada9.7304200515170018400438.jpg" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="http://www.stickpng.com/assets/images/5897a52fcba9841eabab614b.png" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="http://www.stickpng.com/assets/images/586c311b052925979c0768e4.png" style="width:42px;height:42px;border:0">
             </div>
             <div class="canvas-element">
                <canvas id="canvas"></canvas>
