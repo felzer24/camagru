@@ -145,3 +145,8 @@ h4
     background: #bb0000;
     color: white;
   }
+
+  #canvas {
+    display: none;
+    width: 100%;
+  } 

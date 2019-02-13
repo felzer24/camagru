@@ -53,13 +53,15 @@ catch(PDOException $error)
             <!-- <button class="submit" id="clear-button" class="btn btn-light">Clear</button> -->
             <br>
             <div class="icon-bar">
-            <img class="sticker" src="https://cdn131.picsart.com/276545973018211.png?r1024x1024" style="width:42px;height:42px;border:0">
-            <img class="sticker" src="http://www.stickpng.com/assets/images/584998d695008575ff974862.png" style="width:42px;height:42px;border:0">
-            <img class="sticker" src="http://pngimg.com/uploads/glasses/glasses_PNG54293.png" style="width:42px;height:42px;border:0;">
-            <img class="sticker" src="http://www.stickpng.com/assets/images/5897a52fcba9841eabab614b.png" style="width:42px;height:42px;border:0">
-            <img class="sticker" src="http://www.stickpng.com/assets/images/586c311b052925979c0768e4.png" style="width:42px;height:42px;border:0">
-            </div>
-            <div class="canvas-element">
+               <img class='sticker' src="https://clipart.info/images/ccovers/1496184260OMG-Emoji-Png-transparent-background.png" style="width:42px;height:42px;border:0;">
+               <img class='sticker' src="https://images.vexels.com/media/users/3/134594/isolated/preview/cb4dd9ad3fa5ad833e9b38cb75baa18a-happy-emoji-emoticon-by-vexels.png" style="width:42px;height:42px;border:0;">
+               <img class='sticker' src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sunglasses_Emoji.png?2976903553660223024" style="width:42px;height:42px;border:0;">
+               <img class='sticker' style="width:42px;height:42px;">
+
+               </div>
+
+           <button id="clear-button" class="btn btn-light">Clear</button>
+           <div class="canvas-element">
                <canvas id="canvas"></canvas>
                <img id='stick' style="width:42px;height:42px;">
 
