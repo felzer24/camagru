@@ -53,8 +53,17 @@ catch(PDOException $error)
             <button class="submit" id="clear-button" class="btn btn-light">Clear</button>
             <br>
             <div class="icon-bar">
-            <img src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwijvrjSj7bgAhWI1-AKHcINCrYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.seekpng.com%2Fipng%2Fu2e6i1a9y3w7t4w7_heart-emoji-smoke-cool-emojis-pink-nice-sticker%2F&psig=AOvVaw3sCubGq_RLtBYoPB4NNhnl&ust=1550058394342588" alt="">
-             </div>
+            <img class="sticker" src="https://www.seekpng.com/png/small/309-3099727_revolving-hearts-heart-emoji-sticker-png.png" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="http://www.stickpng.com/assets/images/584998d695008575ff974862.png" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="http://pngimg.com/uploads/glasses/glasses_PNG54293.png" style="width:42px;height:42px;border:0;">
+            <img class="sticker" src="https://www.clipartmax.com/png/middle/161-1610445_tongue-mouth-sticker-art-interesting-lips-edit-freetoed-tongue.png" style="width:42px;height:42px;border:0">
+            <img class="sticker" src="https://banner2.kisspng.com/20180126/sfe/kisspng-dog-puppy-snapchat-cat-we-heart-it-dog-ear-dog-nose-sticker-5a6b9c700aada9.7304200515170018400438.jpg" style="width:42px;height:42px;border:0">
+            </div>
+            <div class="canvas-element">
+               <canvas id="canvas"></canvas>
+               <img id='stick' style="width:42px;height:42px;">
+
+           </div>
             <br><br><br><br>
             <canvas id="canvas"></canvas>
 

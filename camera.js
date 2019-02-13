@@ -4,6 +4,8 @@ let width = 500,
     filter = 'none',
     streaming = false;
 
+    var savePhoto = document.getElementById('dl-btn');
+
     //for stickers
 var stick = document.getElementById('stick');
 
