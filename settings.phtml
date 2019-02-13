@@ -57,6 +57,17 @@ if (isset($_SESSION['email']))
         <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
     <body>
+    <h1>CAMAGRU</h1>
+    
+    <div id="sidebar">
+        <a href="camera.php"><input class="camerabutton" type="button" value="camera"></a>
+        <!-- <input class="profilebutton" type="button" onclick="alert('Go to profile')" value="profile"> -->
+        <a href="profile.php"><input class="profilebutton" type="button" value="profile"></a>
+        <a href="gallery.php"><input class="gallerybutton" type="button" value="gallery"></a>
+        <a href="settings.phtml"><input type="submit" value="settings"></a>
+        <a href="logout.php"><input class="logoutbutton" type="button" value="logout"></a>
+      </div>
+
         <form action="settings.phtml" method="post">
         <h3>Enter new username :</h3>
             <input class="input" type="text" name="usernamenew" required placeholder="username"><br><br>
